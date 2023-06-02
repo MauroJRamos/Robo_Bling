@@ -1,0 +1,27 @@
+INSERT INTO `tb_usuario` (`id`, `nom_usuario`, `ativo_inativo`, `dat_cadastro`) VALUES (1, 'ADMINISTRADOR', 'ATIVO', '2023-03-27 00:00:00');
+	
+INSERT INTO `tb_marca` (`id`, `ativo_inativo`, `nom_marca`, `id_usuario_cadastro`, `dat_cadastro`) VALUES(1, 'ATIVO', 'CORTECO', 1, '2023-03-27 21:43:22');
+
+INSERT INTO `tb_dados_ancora` (`dat_request`, `cod_produto`, `dsc_produto`, `dsc_marca_produto`, `vlr_produto`) VALUES ('2023-03-27 21:43:22', '1000', 'CORTECO', 'FIAT', 200 );
+
+INSERT INTO `tb_post_bling` (`id`, `dat_request`, `payload_request`, `status_request`) VALUES (1, '2023-03-27 21:43:22', '1000', 'CORTECO');
+
+
+INSERT INTO `tb_produto` (`id`, `cod_produto`, `nom_produto`, `dsc_produto`, `vlr_preco_ancora`, `vlr_ano_fabricacao`, `marca_id`, `cod_cna`, `qtd_estoque`, `vlr_preco_venda`, `dat_cadastro`, `dat_atualizacao`, `idt_usuario_cadastro`, `idt_usuario_atualizacao`, `ativo_inativo`) VALUES
+	(74, '7873V', 'RETENTOR TRASEIRO VIRABREQUIM', 'RETENTOR TRASEIRO VIRABREQUIM', 126.7, 0, 23, '0', 0, 0, '2023-03-28 08:00:42', NULL, 1, NULL, 'ATIVO'),
+	(75, '64089J', 'KIT DE JUNTA DE MOTOR SUPERIOR C RETENTORES', 'KIT DE JUNTA DE MOTOR SUPERIOR C RETENTORES', 62.74, 0, 23, '0', 0, 0, '2023-03-28 08:00:47', NULL, 1, NULL, 'INATIVO'),
+	(76, '50101C', 'COXIM MOTOR LADO ESQUERDO DIREITO', 'COXIM MOTOR LADO ESQUERDO DIREITO', 270.14, 0, 23, '0', 0, 0, '2023-03-28 08:00:53', NULL, 1, NULL, 'INATIVO'),
+	(78, '67006K', 'REPARO', 'REPARO', 15.38, 0, 23, '0', 0, 0, '2023-03-28 08:01:04', NULL, 1, NULL, 'ATIVO'),
+	(79, '7579N', 'RETENTOR', 'RETENTOR', 13.51, 0, 28, '0', 0, 0, '2023-03-28 08:01:10', NULL, 1, NULL, 'ATIVO'),
+	(80, '50131C', 'COXIM - COXIM CAMBIO', 'COXIM - COXIM CAMBIO', 54.84, 0, 23, '0', 0, 0, '2023-03-28 08:01:15', NULL, 1, NULL, 'ATIVO'),
+	(81, '63592J', 'KIT DE JUNTA DE MOTOR COMPLETO C/ RETENTORES', 'KIT DE JUNTA DE MOTOR COMPLETO C/ RETENTORES', 1008.32, 0, 23, '0', 0, 0, '2023-03-28 08:01:20', NULL, 1, NULL, 'ATIVO'),
+	(82, '50155C', 'COXIM - COXIM DO MOTOR', 'COXIM - COXIM DO MOTOR', 182.85, 0, 23, '0', 0, 0, '2023-03-28 08:01:25', NULL, 1, NULL, 'ATIVO'),
+	(83, '50192C', 'COXIM - RESTRITOR DE TORQUE', 'COXIM - RESTRITOR DE TORQUE', 63.88, 0, 23, '0', 0, 0, '2023-03-28 08:01:31', NULL, 1, NULL, 'ATIVO'),
+	(84, 'B29788', 'KIT', 'KIT', 15.22, 0, 23, '0', 0, 0, '2023-03-28 08:01:36', NULL, 1, NULL, 'ATIVO'),
+	(86, '50052C', 'COXIM TILGER QUADRO AUXILIAR', 'COXIM TILGER QUADRO AUXILIAR', 70.01, 0, 23, '0', 0, 0, '2023-03-28 08:01:47', NULL, 1, NULL, 'ATIVO'),
+	(87, '64107J', 'JUNTA - MOTOR SUPERIOR', 'JUNTA - MOTOR SUPERIOR', 204.01, 0, 23, '0', 0, 0, '2023-03-28 08:01:52', NULL, 1, NULL, 'ATIVO'),
+	(90, '7813P', 'RETENTOR DIANTEIRO VIRABREQUIM', 'RETENTOR DIANTEIRO VIRABREQUIM', 32.91, 0, 23, '0', 0, 0, '2023-03-28 08:02:08', NULL, 1, NULL, 'ATIVO'),
+	(91, '58811K', 'REPARO CAIXA DIRECAO HIDRAULICA', 'REPARO CAIXA DIRECAO HIDRAULICA', 43.81, 0, 23, '0', 0, 0, '2023-03-28 08:02:13', NULL, 1, NULL, 'ATIVO'),
+	(93, '62061K', 'RETENTOR - KIT MOTOR SUPERIOR', 'RETENTOR - KIT MOTOR SUPERIOR', 17.29, 0, 23, '0', 0, 0, '2023-03-28 08:02:24', NULL, 1, NULL, 'ATIVO'),
+	(94, '8386V', 'RETENTOR SAIDA LATERAL DIREITO', 'RETENTOR SAIDA LATERAL DIREITO', 33.08, 0, 23, '0', 0, 0, '2023-03-28 08:02:30', NULL, 1, NULL, 'ATIVO'),
+	(95, '50108C', 'COXIM - MOTOR LADO DIREITO', 'COXIM - MOTOR LADO DIREITO', 287.71, 0, 23, '0', 0, 0, '2023-03-28 08:02:35', NULL, 1, NULL, 'ATIVO');
