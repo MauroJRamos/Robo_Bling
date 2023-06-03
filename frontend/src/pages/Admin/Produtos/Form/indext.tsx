@@ -1,13 +1,16 @@
 import { useHistory, useParams } from 'react-router-dom';
 import { Produto } from 'types/produto';
-import { useForm } from 'react-hook-form';
-import { useEffect } from 'react';
+import { Controller, useForm } from 'react-hook-form';
+import { useEffect, useState } from 'react';
 import { requestBackend } from 'util/requests';
-//import { Marca } from 'types/marca';
+import { Marca } from 'types/marca';
 import { AxiosRequestConfig } from 'axios';
 import { toast } from 'react-toastify';
 
+
 import './styles.css';
+import Select from 'react-select';
+
 
 type UrlParams = {
   productId: string;
@@ -22,21 +25,21 @@ const Form = () => {
 
   const history = useHistory();
 
- //const [selectMarcas, setSelectMarcas] = useState<Marca[]>([]);
+ const [selectMarcas, setSelectMarcas] = useState<Marca[]>([]);
  
   const {
     register,
     handleSubmit,
     formState: { errors },
     setValue,
-   //control,
+    control,
   } = useForm<Produto>();
 
- // useEffect(() => {
- //   requestBackend({ url:'/marca' }).then((response) => {
- //     setSelectMarcas(response.data.content);
- //   });
-//  }, []);
+  useEffect(() => {
+   requestBackend({ url:'/marca' }).then((response) => {
+      setSelectMarcas(response.data.content);
+   });
+  }, []);
 
   useEffect(() => {
     if (isEditing) {
@@ -278,20 +281,14 @@ const Form = () => {
                 </div>
               </div>
               <div className="margin-bottom-30">
-                <input
-                  {...register('marcaId', {
-                    required: 'Campo obrigatório',
-                  })}
-                  type="text"
-                  className={`form-control base-input ${
-                    errors.marcaId ? 'is-invalid' : ''
-                  }`}
-                  placeholder="Id Marca"
-                  name="marcaId"
-                />
-                <div className="invalid-feedback d-block">
-                  {errors.marcaId?.message}
-                </div>
+                    <Select
+                      options={selectMarcas}
+                      classNamePrefix="product-crud-select"
+                      getOptionLabel={(marca: Marca) => marca.nomMarca}
+                      getOptionValue={(marca: Marca) =>
+                        String(marca.id)}
+                      
+                    />
               </div>
             </div>
           </div>

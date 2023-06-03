@@ -10,11 +10,7 @@ const Navbar = () => {
             <p>Produtos</p>
           </NavLink>
         </li>
-        <li>
-          <NavLink to="/admin/marca" className="admin-nav-item">
-            <p>Marca</p>
-          </NavLink>
-        </li>
+      
         <li>
           <NavLink to="/admin/usuarios" className="admin-nav-item">
             <p>Usuários</p>
@@ -25,11 +21,7 @@ const Navbar = () => {
             <p>Dados Ancora</p>
           </NavLink>
         </li>
-        <li>
-          <NavLink to="/admin/posta-bling" className="admin-nav-item">
-            <p>post bling</p>
-          </NavLink>
-        </li>
+    
       </ul>
     </nav>
   );
