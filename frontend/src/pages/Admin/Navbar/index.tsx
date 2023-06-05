@@ -21,6 +21,11 @@ const Navbar = () => {
             <p>Dados Ancora</p>
           </NavLink>
         </li>
+        <li>
+          <NavLink to="/admin/post-bling" className="admin-nav-item">
+            <p>Post Bling</p>
+          </NavLink>
+        </li>
     
       </ul>
     </nav>

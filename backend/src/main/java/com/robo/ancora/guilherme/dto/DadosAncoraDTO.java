@@ -14,7 +14,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class DadosAncoraDTO implements Serializable {
 		private static final long serialVersionUID = 1L;
-		
+		 
+		private int id;
 		private String codProduto;
 		private String dscProduto;
 		private String dscMarcaProduto;
@@ -23,6 +24,7 @@ public class DadosAncoraDTO implements Serializable {
 
 		
 		public  DadosAncoraDTO(DadosAncora entity) {
+			id = entity.getId();
 			codProduto = entity.getCodProduto();
 			dscProduto = entity.getDscProduto();
 			dscMarcaProduto = entity.getDscMarcaProduto();

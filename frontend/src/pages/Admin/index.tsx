@@ -5,6 +5,7 @@ import Produtos from './Produtos';
 import './styles.css';
 import Marcas from './Marcas';
 import Ancora from './DadosAncora';
+import PostBling from './PostBling';
 
 const Admin = () => {
   return (
@@ -24,8 +25,8 @@ const Admin = () => {
           <Route path="/admin/dados-ancora">
             <Ancora/>
           </Route>
-          <Route path="/admin/posta-bling">
-            <h1>Dados Bling</h1>
+          <Route path="/admin/post-bling">
+            <PostBling/>
           </Route>
         </Switch>
       </div>

@@ -2,8 +2,8 @@ import axios from "axios";
 import Pagination from "components/Pagination";
 import ProdutoFiltro , { ProductFilterData } from "components/ProdutoFiltro";
 import { useEffect, useState } from "react";
-import { AncoraPage} from "types/dadosAncora";
-import { formatLocalDate, formatPrice } from "util/format";
+import { BlingPage } from "types/postBling";
+import { formatLocalDate } from "util/format";
 import { BASE_URL } from "util/requests";
 
 
@@ -13,12 +13,12 @@ type ControlComponentsData = {
 };
 
 
-const DataTableAncora = () => {
+const DataTableBling = () => {
   
   
 
   //const [activePage, setActivePage] = useState(0);
-  const [page, setPage] = useState<AncoraPage>({
+  const [page, setPage] = useState<BlingPage>({
     first: true,
     last: true,
     number: 0,
@@ -43,7 +43,7 @@ const DataTableAncora = () => {
   useEffect(() => {
     axios
       .get(
-        `${BASE_URL}/dados_ancora?page=${controlComponentsData.activePage}&size=12&sort=datRequest`
+        `${BASE_URL}/post_bling?page=${controlComponentsData.activePage}&size=12&sort=datRequest`
       )
       .then((response) => {
         setPage(response.data);
@@ -63,9 +63,8 @@ const DataTableAncora = () => {
           <thead>
             <tr>
               <th scope="row">Codigo</th>
-              <th scope="row">Desc Produto</th>
-              <th scope="row">Marca Produto</th>
-              <th scope="row">vlr Produto</th>
+              <th scope="row">Status Request</th>
+              <th scope="row">Payload Request</th>
               <th scope="row">Data Request</th>
              
             </tr>
@@ -73,10 +72,9 @@ const DataTableAncora = () => {
           <tbody>
             {page.content?.map((item) => (
               <tr key={item.id}>
-                <td>{item.codProduto}</td>
-                <td>{item.dscProduto}</td>
-                <td>{item.dscMarcaProduto}</td>
-                <td>{formatPrice (item.vlrProduto)}</td>
+                <td>{item.id}</td>
+                <td>{item.status_request}</td>
+                <td>{item.payload_request}</td>
                 <td>{formatLocalDate(item.datRequest, "dd/MM/yyyy")}</td>
                
               </tr>
@@ -92,4 +90,4 @@ const DataTableAncora = () => {
   );
 };
 
-export default DataTableAncora;
+export default DataTableBling;

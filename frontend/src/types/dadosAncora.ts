@@ -1,5 +1,6 @@
 export type DadosAncora = {
-            codProduto: string;
+           id: number;
+           codProduto: string;
             dscProduto: string;
             dscMarcaProduto: string;
             vlrProduto: number;

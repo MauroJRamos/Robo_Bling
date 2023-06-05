@@ -24,6 +24,7 @@ public class DadosAncora implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
 	private String codProduto;
 	private String dscProduto;
 	private String dscMarcaProduto;
