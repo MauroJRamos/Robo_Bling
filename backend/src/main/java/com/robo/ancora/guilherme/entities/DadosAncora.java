@@ -1,7 +1,7 @@
 package com.robo.ancora.guilherme.entities;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -31,6 +31,6 @@ public class DadosAncora implements Serializable {
 	private Double vlrProduto;
 	
 	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
-	private Date datRequest;
+	private LocalDateTime datRequest;
 
 }

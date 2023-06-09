@@ -1,7 +1,7 @@
 package com.robo.ancora.guilherme.dto;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 import com.robo.ancora.guilherme.entities.DadosAncora;
 
@@ -20,7 +20,7 @@ public class DadosAncoraDTO implements Serializable {
 		private String dscProduto;
 		private String dscMarcaProduto;
 		private Double vlrProduto;
-		private Date datRequest;
+		private LocalDateTime datRequest;
 
 		
 		public  DadosAncoraDTO(DadosAncora entity) {

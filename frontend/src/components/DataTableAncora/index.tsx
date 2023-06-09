@@ -1,6 +1,6 @@
 import axios from "axios";
 import Pagination from "components/Pagination";
-import ProdutoFiltro , { ProductFilterData } from "components/ProdutoFiltro";
+import DadosAncoraFiltro , { DadosAncoraFilterData } from "components/DadosAncoraFiltro";
 import { useEffect, useState } from "react";
 import { AncoraPage} from "types/dadosAncora";
 import { formatLocalDate, formatPrice } from "util/format";
@@ -9,7 +9,7 @@ import { BASE_URL } from "util/requests";
 
 type ControlComponentsData = {
   activePage: number;
-  filterData: ProductFilterData;
+  filterData: DadosAncoraFilterData;
 };
 
 
@@ -29,10 +29,10 @@ const DataTableAncora = () => {
   const [controlComponentsData, setControlComponentsData] =
     useState<ControlComponentsData>({
       activePage: 0,
-      filterData: { codigo: '' },
+      filterData: { dataInicio: '', dataFim: '' },
     });
 
-  const handleSubmitFilter = (data: ProductFilterData) => {
+  const handleSubmitFilter = (data: DadosAncoraFilterData) => {
     setControlComponentsData({ activePage: 0, filterData: data });   
   };
 
@@ -43,7 +43,7 @@ const DataTableAncora = () => {
   useEffect(() => {
     axios
       .get(
-        `${BASE_URL}/dados_ancora?page=${controlComponentsData.activePage}&size=12&sort=datRequest`
+        `${BASE_URL}/dados_ancora?page=${controlComponentsData.activePage}&size=12&sort=datRequest&dataInicio=${controlComponentsData.filterData.dataInicio}&dataFim=${controlComponentsData.filterData.dataInicio}`
       )
       .then((response) => {
         setPage(response.data);
@@ -55,7 +55,7 @@ const DataTableAncora = () => {
   return (
     <>
       <div className="product-crud-bar-container">
-        <ProdutoFiltro onSubmitFilter={handleSubmitFilter}/>
+        <DadosAncoraFiltro onSubmitFilter={handleSubmitFilter}/>
       </div>
       
       <div className="table-responsive">
