@@ -43,7 +43,7 @@ const DataTableAncora = () => {
   useEffect(() => {
     axios
       .get(
-        `${BASE_URL}/dados_ancora?page=${controlComponentsData.activePage}&size=12&sort=datRequest&dataInicio=${controlComponentsData.filterData.dataInicio}&dataFim=${controlComponentsData.filterData.dataInicio}`
+        `${BASE_URL}/dados_ancora?page=${controlComponentsData.activePage}&size=12&sort=datRequest&dataInicio=${controlComponentsData.filterData.dataInicio}&dataFim=${controlComponentsData.filterData.dataFim}`
       )
       .then((response) => {
         setPage(response.data);

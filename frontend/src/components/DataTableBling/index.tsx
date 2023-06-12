@@ -1,6 +1,7 @@
 import axios from "axios";
 import Pagination from "components/Pagination";
-import ProdutoFiltro , { ProductFilterData } from "components/ProdutoFiltro";
+import PostBlingFilter , { PostBlingFilterData} from "components/PostBlingFiltro";
+//import ProdutoFiltro , { ProductFilterData } from "components/ProdutoFiltro";
 import { useEffect, useState } from "react";
 import { BlingPage } from "types/postBling";
 import { formatLocalDate } from "util/format";
@@ -9,7 +10,7 @@ import { BASE_URL } from "util/requests";
 
 type ControlComponentsData = {
   activePage: number;
-  filterData: ProductFilterData;
+  filterData: PostBlingFilterData;
 };
 
 
@@ -29,10 +30,10 @@ const DataTableBling = () => {
   const [controlComponentsData, setControlComponentsData] =
     useState<ControlComponentsData>({
       activePage: 0,
-      filterData: { codigo: '' },
+      filterData: { dataInicio: '', dataFim: '' },
     });
 
-  const handleSubmitFilter = (data: ProductFilterData) => {
+  const handleSubmitFilter = (data: PostBlingFilterData) => {
     setControlComponentsData({ activePage: 0, filterData: data });   
   };
 
@@ -43,7 +44,7 @@ const DataTableBling = () => {
   useEffect(() => {
     axios
       .get(
-        `${BASE_URL}/post_bling?page=${controlComponentsData.activePage}&size=12&sort=datRequest`
+        `${BASE_URL}/post_bling?page=${controlComponentsData.activePage}&size=12&sort=datRequest&dataInicio=${controlComponentsData.filterData.dataInicio}&dataFim=${controlComponentsData.filterData.dataFim}`
       )
       .then((response) => {
         setPage(response.data);
@@ -55,7 +56,7 @@ const DataTableBling = () => {
   return (
     <>
       <div className="product-crud-bar-container">
-        <ProdutoFiltro onSubmitFilter={handleSubmitFilter}/>
+        <PostBlingFilter onSubmitFilter={handleSubmitFilter}/>
       </div>
       
       <div className="table-responsive">

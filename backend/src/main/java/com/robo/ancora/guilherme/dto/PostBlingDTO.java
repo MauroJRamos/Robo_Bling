@@ -1,7 +1,7 @@
 package com.robo.ancora.guilherme.dto;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 import com.robo.ancora.guilherme.entities.PostBling;
 
@@ -18,7 +18,7 @@ public class PostBlingDTO implements Serializable {
 	private Long id;
 	private String status_request;
 	private String payload_request;
-	private Date datRequest;
+	private LocalDateTime datRequest;
 	
 	public  PostBlingDTO(PostBling entity) {
 		id = entity.getId();
