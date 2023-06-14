@@ -1,24 +1,23 @@
 import axios from "axios";
+import DadosAncoraFiltro, { DadosAncoraFilterData } from "components/DadosAncoraFiltro";
 import Pagination from "components/Pagination";
-import PostBlingFilter , { PostBlingFilterData} from "components/PostBlingFiltro";
-//import ProdutoFiltro , { ProductFilterData } from "components/ProdutoFiltro";
+//import PostBlingFilter, { PostBlingFilterData } from "components/PostBlingFiltro";
 import { useEffect, useState } from "react";
 import { BlingPage } from "types/postBling";
 import { formatLocalDate } from "util/format";
 import { BASE_URL } from "util/requests";
 
 
+
 type ControlComponentsData = {
   activePage: number;
-  filterData: PostBlingFilterData;
+  filterData: DadosAncoraFilterData;
 };
 
 
 const DataTableBling = () => {
   
   
-
-  //const [activePage, setActivePage] = useState(0);
   const [page, setPage] = useState<BlingPage>({
     first: true,
     last: true,
@@ -33,7 +32,7 @@ const DataTableBling = () => {
       filterData: { dataInicio: '', dataFim: '' },
     });
 
-  const handleSubmitFilter = (data: PostBlingFilterData) => {
+  const handleSubmitFilter = (data: DadosAncoraFilterData) => {
     setControlComponentsData({ activePage: 0, filterData: data });   
   };
 
@@ -56,7 +55,7 @@ const DataTableBling = () => {
   return (
     <>
       <div className="product-crud-bar-container">
-        <PostBlingFilter onSubmitFilter={handleSubmitFilter}/>
+        <DadosAncoraFiltro onSubmitFilter={handleSubmitFilter}/>
       </div>
       
       <div className="table-responsive">

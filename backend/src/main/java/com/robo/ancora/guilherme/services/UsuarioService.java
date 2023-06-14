@@ -27,8 +27,8 @@ public class UsuarioService {
 	private UsuarioRepository repository;
 
 	@Transactional(readOnly = true)
-	public Page<UsuarioDTO> findAllPaged(Pageable pageable) {
-		Page<Usuario> list = repository.findAll(pageable);
+	public Page<UsuarioDTO> findAllPaged(String nomUsuario, Pageable pageable) {
+		Page<Usuario> list = repository.findWithNullCheck(nomUsuario, pageable);
 		return list.map(x -> new UsuarioDTO(x));
 
 	}

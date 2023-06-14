@@ -1,6 +1,6 @@
 import { AxiosRequestConfig } from 'axios';
 import Pagination from 'components/Pagination';
-import ProductFilter, { ProductFilterData } from 'components/ProdutoFiltro';
+import ProductFilter, { ProductFilterData } from 'components/UserFiltro';
 import { useCallback } from 'react';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -41,7 +41,7 @@ const List = () => {
       params: {
         page: controlComponentsData.activePage,
         size: 3,
-        codigoId: controlComponentsData.filterData.codigo,
+        nomUsuario: controlComponentsData.filterData.codigo,
       },
     };
 
