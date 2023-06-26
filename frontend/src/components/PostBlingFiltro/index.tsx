@@ -2,23 +2,23 @@
 import { useForm } from 'react-hook-form';
 import './styles.css';
 
-export type DadosAncoraFilterData = {
+export type PostBlingFilterData = {
   dataInicio: string;
   dataFim: string;
 };
 
 type Props = {
-  onSubmitFilter: (data: DadosAncoraFilterData) => void;
+  onSubmitFilter: (data: PostBlingFilterData) => void;
 };
 
 
 
-const DadosAncoraFiltro = ({ onSubmitFilter }: Props) => {
+const PostBlingFilter = ({ onSubmitFilter }: Props) => {
 
   const { register, handleSubmit, setValue } =
-  useForm<DadosAncoraFilterData>();
+  useForm<PostBlingFilterData>();
 
-const onSubmit = (formData: DadosAncoraFilterData) => {
+const onSubmit = (formData: PostBlingFilterData) => {
   onSubmitFilter(formData);
 };
 
@@ -67,4 +67,4 @@ const handleFormClear = () => {
   );
 };
 
-export default DadosAncoraFiltro;
+export default PostBlingFilter;

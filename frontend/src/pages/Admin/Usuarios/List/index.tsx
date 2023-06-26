@@ -1,6 +1,6 @@
 import { AxiosRequestConfig } from 'axios';
 import Pagination from 'components/Pagination';
-import ProductFilter, { ProductFilterData } from 'components/UserFiltro';
+import  UsuarioFiltro, { UserFilterData } from 'components/UserFiltro';
 import { useCallback } from 'react';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -11,9 +11,10 @@ import './styles.css';
 import UserCrudCard from '../UserCrudCard';
 
 
+
 type ControlComponentsData = {
   activePage: number;
-  filterData: ProductFilterData;
+  filterData: UserFilterData;
 };
 
 const List = () => {
@@ -22,7 +23,7 @@ const List = () => {
   const [controlComponentsData, setControlComponentsData] =
     useState<ControlComponentsData>({
       activePage: 0,
-     filterData: { codigo: '', },
+     filterData: { nomUsuario: '', },
     });
 
   const handlePageChange = (pageNumber: number) => {
@@ -30,7 +31,7 @@ const List = () => {
     
   };
 
-  const handleSubmitFilter = (data: ProductFilterData) => {
+  const handleSubmitFilter = (data: UserFilterData) => {
     setControlComponentsData({ activePage: 0, filterData: data });   
   };
 
@@ -41,7 +42,7 @@ const List = () => {
       params: {
         page: controlComponentsData.activePage,
         size: 3,
-        nomUsuario: controlComponentsData.filterData.codigo,
+        nomUsuario: controlComponentsData.filterData.nomUsuario,
       },
     };
 
@@ -62,7 +63,7 @@ const List = () => {
             ADICIONAR
           </button>
         </Link>
-        <ProductFilter onSubmitFilter={handleSubmitFilter} />
+        <UsuarioFiltro onSubmitFilter={handleSubmitFilter} />
       </div>
       <div className="row">
         {page?.content.map((usuario) => (

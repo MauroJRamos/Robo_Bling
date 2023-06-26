@@ -3,27 +3,27 @@ import { useForm } from 'react-hook-form';
 
 import './styles.css';
 
-export type ProductFilterData = {
-  codigo: string;
+export type UserFilterData = {
+  nomUsuario: string;
 };
 
 type Props = {
-  onSubmitFilter: (data: ProductFilterData) => void;
+  onSubmitFilter: (data: UserFilterData) => void;
 };
 
 
 
-const ProdutoFiltro = ({ onSubmitFilter }: Props) => {
+const UsuarioFiltro = ({ onSubmitFilter }: Props) => {
 
   const { register, handleSubmit, setValue } =
-  useForm<ProductFilterData>();
+  useForm<UserFilterData>();
 
-const onSubmit = (formData: ProductFilterData) => {
+const onSubmit = (formData: UserFilterData) => {
   onSubmitFilter(formData);
 };
 
 const handleFormClear = () => {
-  setValue('codigo','');
+  setValue('nomUsuario','');
 };
 
 
@@ -33,11 +33,11 @@ const handleFormClear = () => {
       <form onSubmit={handleSubmit(onSubmit)} className="product-filter-form">
         <div className="product-filter-name-container">
           <input
-           {...register('codigo')}
+           {...register('nomUsuario')}
             type="text"
             className="form-control"
-            placeholder="Codigo do produto"
-            name="codigo"
+            placeholder="Nome do Usuario"
+            name="nomUsuario"
           />
            <button className='product-filter-search-icon'>
             Source
@@ -59,4 +59,4 @@ const handleFormClear = () => {
   );
 };
 
-export default ProdutoFiltro;
+export default UsuarioFiltro;
