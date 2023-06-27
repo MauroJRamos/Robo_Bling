@@ -1,6 +1,6 @@
 import { useHistory, useParams } from 'react-router-dom';
 import { Produto } from 'types/produto';
-import { Controller, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { useEffect, useState } from 'react';
 import { requestBackend } from 'util/requests';
 import { Marca } from 'types/marca';
@@ -32,7 +32,7 @@ const Form = () => {
     handleSubmit,
     formState: { errors },
     setValue,
-    control,
+  
   } = useForm<Produto>();
 
   useEffect(() => {
