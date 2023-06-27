@@ -9,9 +9,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.robo.ancora.guilherme.dto.DadosAncoraDTO;
 import com.robo.ancora.guilherme.dto.PostBlingDTO;
-import com.robo.ancora.guilherme.entities.DadosAncora;
 import com.robo.ancora.guilherme.entities.PostBling;
 import com.robo.ancora.guilherme.repositories.PostBlingRepository;
 

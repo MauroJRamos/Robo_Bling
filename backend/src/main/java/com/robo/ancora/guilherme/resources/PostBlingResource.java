@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.robo.ancora.guilherme.dto.DadosAncoraDTO;
 import com.robo.ancora.guilherme.dto.PostBlingDTO;
 import com.robo.ancora.guilherme.services.PostBlingService;
 

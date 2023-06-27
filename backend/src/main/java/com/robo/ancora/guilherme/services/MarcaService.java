@@ -12,14 +12,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-
 import com.robo.ancora.guilherme.dto.MarcaDTO;
-import com.robo.ancora.guilherme.dto.MarcaDTO;
-import com.robo.ancora.guilherme.dto.MarcaDTO;
-import com.robo.ancora.guilherme.dto.MarcaDTO;
-import com.robo.ancora.guilherme.entities.Marca;
-import com.robo.ancora.guilherme.entities.Marca;
-import com.robo.ancora.guilherme.entities.Marca;
 import com.robo.ancora.guilherme.entities.Marca;
 import com.robo.ancora.guilherme.repositories.MarcaRepository;
 import com.robo.ancora.guilherme.services.exceptions.DatabaseException;

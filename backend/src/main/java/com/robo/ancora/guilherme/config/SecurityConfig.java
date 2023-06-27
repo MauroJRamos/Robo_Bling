@@ -11,7 +11,6 @@ import org.springframework.core.env.Environment;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-//import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -45,6 +44,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	    corsConfig.setAllowedOriginPatterns(Arrays.asList("*"));//Aqui pode ser adicionado o dominio da aplicação do fronte end ex: http://meu dominio
 	    corsConfig.setAllowedMethods(Arrays.asList("POST", "GET", "PUT", "DELETE", "PATCH"));
 	    corsConfig.setAllowCredentials(true);
+	    //corsConfig.setAllowedHeaders(Arrays.asList("*"));
 	    corsConfig.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type"));
 	 
 	    UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();

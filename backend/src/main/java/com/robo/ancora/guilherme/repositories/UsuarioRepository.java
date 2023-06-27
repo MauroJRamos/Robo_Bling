@@ -5,7 +5,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import com.robo.ancora.guilherme.entities.Produto;
 import com.robo.ancora.guilherme.entities.Usuario;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Long>{

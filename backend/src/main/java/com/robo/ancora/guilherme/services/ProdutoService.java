@@ -13,8 +13,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.robo.ancora.guilherme.dto.ProdutoDTO;
-import com.robo.ancora.guilherme.dto.ProdutoDTO;
-import com.robo.ancora.guilherme.entities.Produto;
 import com.robo.ancora.guilherme.entities.Produto;
 import com.robo.ancora.guilherme.repositories.ProdutoRepository;
 import com.robo.ancora.guilherme.services.exceptions.DatabaseException;

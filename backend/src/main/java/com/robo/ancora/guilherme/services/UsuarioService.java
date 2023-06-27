@@ -12,7 +12,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-
 import com.robo.ancora.guilherme.dto.UsuarioDTO;
 import com.robo.ancora.guilherme.entities.Usuario;
 import com.robo.ancora.guilherme.repositories.UsuarioRepository;
